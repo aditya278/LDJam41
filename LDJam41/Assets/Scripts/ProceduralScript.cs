@@ -11,6 +11,7 @@ public class ProceduralScript : MonoBehaviour {
 
     public GameObject rockGO;
     public GameObject treeGO;
+    public GameObject lakeGo;
 
     int objectDistance = 10;
 
@@ -43,7 +44,8 @@ public class ProceduralScript : MonoBehaviour {
         {
             for (int h = 0; h < mapHeight; h++)
             {
-                Vector3 pos = new Vector3(playerTransform.transform.position.x * objectDistance * 10, 0, playerTransform.transform.position.y * objectDistance * 10);
+                objectDistance = (int)Random.Range(6f, 12f);
+                Vector3 pos = new Vector3(w * objectDistance, h * objectDistance, 0);
 
                 int result = mapgrid[w, h];
                 if (result < 1)
@@ -55,6 +57,14 @@ public class ProceduralScript : MonoBehaviour {
                 {
                     GameObject tree = Instantiate(treeGO, pos, Quaternion.identity);
                     tree.GetComponent<SpriteRenderer>().sprite = treeSprites[Random.Range(0, treeSprites.Length)];
+                }
+                else
+                {
+                    int randInt = (int)Random.Range(1f, 10f);
+                    if (randInt == 5)
+                    {
+                        GameObject lake = Instantiate(lakeGo, pos, Quaternion.identity);
+                    }
                 }
             }
         }
