@@ -16,7 +16,7 @@ public class Lightning : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if (Random.Range (1, 30) % 3 == 0) {
+		if (Random.Range (1, 30) % 5 == 0) {
 		
 			flash ();
 		}
