@@ -35,6 +35,7 @@ public class footTrail : MonoBehaviour {
 			if (h != 0 ) {
 			
 				horizontal = true;
+
 			} else {
 			
 				horizontal = false;
@@ -51,25 +52,27 @@ public class footTrail : MonoBehaviour {
 	{
 		calledFootsteps = true;
 		yield return new WaitForSeconds(0.3f);
+
+		float angle = Mathf.Atan2 (v, h) * Mathf.Rad2Deg;
 		if (horizontal) {
 			if (i % 2 == 0) {
 				if (h < 0) {
 				
-					GameObject go = (GameObject)Instantiate (leftFoot, new Vector2 (Player.transform.position.x, Player.transform.position.y - 0.3f), Quaternion.Euler (0f, 0f, -90f + pm.angle ));
+					GameObject go = (GameObject)Instantiate (leftFoot, new Vector2 (Player.transform.position.x, Player.transform.position.y - 0.3f), Quaternion.Euler (0f, 0f, -90f + angle ));
 					StartCoroutine (destroyFootsteps (go));
 			
 				} else {
 					
-					GameObject go = (GameObject)Instantiate (rightFoot, new Vector2 (Player.transform.position.x, Player.transform.position.y - 0.3f), Quaternion.Euler (0f, 0f, -90f + pm.angle));
+					GameObject go = (GameObject)Instantiate (rightFoot, new Vector2 (Player.transform.position.x, Player.transform.position.y - 0.3f), Quaternion.Euler (0f, 0f, -90f + angle));
 					StartCoroutine (destroyFootsteps (go));
 				}
 			} else {
 				if (h < 0) {
-					GameObject go = (GameObject)Instantiate (rightFoot, new Vector2 (Player.transform.position.x, Player.transform.position.y + 0.3f), Quaternion.Euler (0f, 0f, -90f + pm.angle));
+					GameObject go = (GameObject)Instantiate (rightFoot, new Vector2 (Player.transform.position.x, Player.transform.position.y + 0.3f), Quaternion.Euler (0f, 0f, -90f + angle));
 					StartCoroutine (destroyFootsteps (go));
 				} else {
 					
-					GameObject go = (GameObject)Instantiate (leftFoot, new Vector2 (Player.transform.position.x, Player.transform.position.y + 0.3f), Quaternion.Euler (0f, 0f, -90f + pm.angle));
+					GameObject go = (GameObject)Instantiate (leftFoot, new Vector2 (Player.transform.position.x, Player.transform.position.y + 0.3f), Quaternion.Euler (0f, 0f, -90f + angle));
 					StartCoroutine (destroyFootsteps (go));
 				}
 			}
@@ -77,21 +80,21 @@ public class footTrail : MonoBehaviour {
 			if (i % 2 == 0) {
 				if (v <= 0) {
 
-					GameObject go = (GameObject)Instantiate (leftFoot, new Vector2 (Player.transform.position.x+0.3f, Player.transform.position.y), Quaternion.Euler (0f, 0f, -90f + pm.angle));
+					GameObject go = (GameObject)Instantiate (leftFoot, new Vector2 (Player.transform.position.x+0.3f, Player.transform.position.y), Quaternion.Euler (0f, 0f, -90f + angle));
 					StartCoroutine (destroyFootsteps (go));
 
 				} else {
 
-					GameObject go = (GameObject)Instantiate (rightFoot, new Vector2 (Player.transform.position.x + 0.3f, Player.transform.position.y), Quaternion.Euler (0f, 0f, -90f + pm.angle));
+					GameObject go = (GameObject)Instantiate (rightFoot, new Vector2 (Player.transform.position.x + 0.3f, Player.transform.position.y), Quaternion.Euler (0f, 0f, -90f + angle));
 					StartCoroutine (destroyFootsteps (go));
 				}
 			} else {
 				if (v <= 0) {
-					GameObject go = (GameObject)Instantiate (rightFoot, new Vector2 (Player.transform.position.x - 0.3f, Player.transform.position.y), Quaternion.Euler (0f, 0f, -90f + pm.angle));
+					GameObject go = (GameObject)Instantiate (rightFoot, new Vector2 (Player.transform.position.x - 0.3f, Player.transform.position.y), Quaternion.Euler (0f, 0f, -90f + angle));
 					StartCoroutine (destroyFootsteps (go));
 				} else {
 
-					GameObject go = (GameObject)Instantiate (leftFoot, new Vector2 (Player.transform.position.x - 0.3f, Player.transform.position.y), Quaternion.Euler (0f, 0f, -90f + pm.angle));
+					GameObject go = (GameObject)Instantiate (leftFoot, new Vector2 (Player.transform.position.x - 0.3f, Player.transform.position.y), Quaternion.Euler (0f, 0f, -90f + angle));
 					StartCoroutine (destroyFootsteps (go));
 				}
 			}
