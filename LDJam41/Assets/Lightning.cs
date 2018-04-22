@@ -4,24 +4,38 @@ using UnityEngine;
 
 public class Lightning : MonoBehaviour {
 
-	float minTime=0.5f;
+	float minTime = 0.5f;
+    float maxTime = 0.8f;
 	float threshold=0.5f;
 	public Light light;
 	float lasttime=0f;
+
+    public bool flashNow;
+
+    public float waitForSec = 0.5f;
+
 	// Use this for initialization
 	void Start () {
-		
+
+       // StartCoroutine(WaitForFlashing(5f));
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if (Random.Range (1, 30) % 5 == 0) {
+        /*if (Random.Range (1, 30) % 5 == 0) {
 		
 			flash ();
-		}
-		
-	}
+		}*/
+
+        waitForSec -= Time.deltaTime;
+        if(waitForSec < 0f)
+        {
+            StartCoroutine(Flashing(Random.Range(minTime, maxTime)));
+            waitForSec = Random.Range(2f, 8f);
+        }
+
+    }
 
 	void flash()
 	{
@@ -38,4 +52,15 @@ public class Lightning : MonoBehaviour {
 		}
 
 	}
+
+    IEnumerator Flashing(float time)
+    {
+
+        light.enabled = true;
+
+        yield return new WaitForSeconds(time);
+
+        light.enabled = false;
+        
+    }
 }
