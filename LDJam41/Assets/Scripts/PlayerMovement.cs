@@ -11,13 +11,15 @@ public class PlayerMovement : MonoBehaviour {
 	public footTrail ft;
     public PlayMove pmm;
 
+    public Transform spawnPoint;
+
     public GameManager gameManager;
 
 	// Use this for initialization
 	void Start () {
 
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-
+        gameObject.transform.position = spawnPoint.transform.position;
 		direction = Vector3.zero;
 	}
 
@@ -31,11 +33,37 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (col.gameObject.CompareTag("Meme"))
             {
-                AudioSource audioSource = col.gameObject.GetComponent<AudioSource>();
-                audioSource.Stop();
+                //AudioSource audioSource = col.gameObject.GetComponent<AudioSource>();
+                //audioSource.Stop();
+
+
+                AudioSource[] sources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+                for (int index = 0; index < sources.Length; ++index)
+                {
+                    sources[index].mute = true;
+                }
+
+
                 Debug.Log("Game Over!!");
                 gameManager.GameOver();
             }
+
+            if(col.gameObject.CompareTag("Target"))
+            {
+                //AudioSource audioSource = col.gameObject.GetComponent<AudioSource>();
+                //audioSource.Stop();
+
+                AudioSource[] sources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+                for (int index = 0; index < sources.Length; ++index)
+                {
+                    sources[index].mute = true;
+                }
+
+
+                Debug.Log("Winner!");
+                gameManager.GameWon();
+            }
+
         }
 
 	}
