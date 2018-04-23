@@ -8,11 +8,24 @@ public class PlayerMovement : MonoBehaviour {
 	public float h;
 	public float v;
 	public float angle;
+	public footTrail ft;
 	// Use this for initialization
 	void Start () {
 		direction = Vector3.zero;
 	}
+
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+
+		ft.toPlay = ft.dirt;
+	}
+
+	void OnTriggerExit2D(Collider2D col)
+	{
 	
+		ft.toPlay = ft.normal;
+	}
 	// Update is called once per frame
 	void FixedUpdate () {
 

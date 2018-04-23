@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4160152018653360}
   - component: {fileID: 212058122232355616}
+  - component: {fileID: 60095287534338626}
   m_Layer: 0
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,6 +41,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60095287534338626
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1316800127592850}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 1.28}
+    newSize: {x: 2.56, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.42, y: -0.51}
+      - {x: -0.37, y: -0.52}
+      - {x: -0.19999999, y: -0.45999998}
+      - {x: -0.08, y: -0.48}
+      - {x: 0, y: -0.51}
+      - {x: 0.29999998, y: -0.51}
+      - {x: 0.44, y: -0.48999998}
+      - {x: 0.55, y: -0.55}
+      - {x: 0.74, y: -0.53999996}
+      - {x: 1.01, y: -0.52}
+      - {x: 1.04, y: -0.48}
+      - {x: 1.04, y: -0.45999998}
+      - {x: 0.90999997, y: -0.24}
+      - {x: 0.81, y: -0.13}
+      - {x: 0.71, y: 0.099999994}
+      - {x: 0.65999997, y: 0.19}
+      - {x: 0.41, y: 0.42}
+      - {x: 0.26, y: 0.47}
+      - {x: 0.03, y: 0.5}
+      - {x: -0.089999996, y: 0.5}
+      - {x: -0.26999998, y: 0.39}
+      - {x: -0.39999998, y: 0.25}
+      - {x: -0.66999996, y: 0.13}
+      - {x: -0.77, y: 0.14999999}
+      - {x: -0.84, y: 0.08}
+      - {x: -0.95, y: 0.03}
+      - {x: -1.0799999, y: -0.099999994}
+      - {x: -1.15, y: -0.21}
+      - {x: -1.2099999, y: -0.37}
+      - {x: -1.2099999, y: -0.42}
+      - {x: -1.18, y: -0.45}
+      - {x: -1.04, y: -0.52}
+      - {x: -1.02, y: -0.58}
+      - {x: -1, y: -0.61}
+      - {x: -0.96, y: -0.61}
+      - {x: -0.9, y: -0.59999996}
+      - {x: -0.82, y: -0.55}
+      - {x: -0.66999996, y: -0.55}
+      - {x: -0.59999996, y: -0.53999996}
 --- !u!212 &212058122232355616
 SpriteRenderer:
   m_ObjectHideFlags: 1

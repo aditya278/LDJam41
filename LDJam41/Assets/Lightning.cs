@@ -11,8 +11,9 @@ public class Lightning : MonoBehaviour {
 	float lasttime=0f;
 
     public bool flashNow;
-
-    public float waitForSec = 0.5f;
+	public AudioSource ass;
+	public AudioClip[] ac;  
+	public float waitForSec = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -42,8 +43,14 @@ public class Lightning : MonoBehaviour {
 		if ((Time.time - lasttime) > minTime) {
 
 			if (Random.value > threshold) {
+				if (!ass.isPlaying) {
+				
+					//ass.clip = ac [Random.Range (0, 1)];
+					ass.PlayOneShot (ac[Random.Range(0,ac.Length)], 1f);
+					light.enabled = true;
+				}
+					
 
-				light.enabled = true;
 			} else {
 
 				light.enabled = false;
