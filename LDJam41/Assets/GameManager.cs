@@ -15,9 +15,15 @@ public class GameManager : MonoBehaviour {
     public bool gameover;
 
 	public GameObject player;
-	// Use this for initialization
-	void Start () {
 
+    public GameObject finalCanvas;
+
+    public TypeWriterEffect typeWriterEffect;
+
+    // Use this for initialization
+    void Start () {
+
+        finalCanvas.SetActive(false);
         gameover = false;
         targetAudio = GameObject.FindGameObjectWithTag("Target").GetComponent<AudioSource>();
 	}
@@ -36,10 +42,19 @@ public class GameManager : MonoBehaviour {
 
     public void GameWon()
     {
-        gameover = false;        
+        gameover = false;
 
-        StartCoroutine(Waiting(10f));
+        finalCanvas.SetActive(true);
+        typeWriterEffect.StartShowingText();
+        asource.mute = false;
+        asource.PlayOneShot(evilMorty);
+        //StartCoroutine(Waiting(10f));
+    }
 
+    public void GameWonBtn()
+    {
+
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator Waiting(float t)
@@ -48,10 +63,8 @@ public class GameManager : MonoBehaviour {
         //targetAudio.mute = false;
         asource.mute = false;
 
-        if(gameover)
-            asource.PlayOneShot(scream);
-        else
-            asource.PlayOneShot(evilMorty);
+       
+        asource.PlayOneShot(scream);
         
 		player.SetActive (false);
 		//Time.timeScale = 0;

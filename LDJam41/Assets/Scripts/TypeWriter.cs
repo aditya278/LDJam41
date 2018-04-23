@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class TypeWriterEffect : MonoBehaviour {
+public class TypeWriter : MonoBehaviour {
 
 	public float delay = 0.1f;
 	public string fullText;
@@ -22,11 +22,6 @@ public class TypeWriterEffect : MonoBehaviour {
         mainMenuCanvas.SetActive(true);
         button2.SetActive(false);
        
-    }
-
-    public void StartShowingText()
-    {
-        StartCoroutine(ShowText());
     }
 	
 	public IEnumerator ShowText(){

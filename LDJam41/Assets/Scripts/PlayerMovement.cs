@@ -18,9 +18,12 @@ public class PlayerMovement : MonoBehaviour {
 	public Sprite[] sprite; 
 
 	public Image image;
+
+    
 	// Use this for initialization
 	void Start () {
 
+        
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         gameObject.transform.position = spawnPoint.transform.position;
 		direction = Vector3.zero;

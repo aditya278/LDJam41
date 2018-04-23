@@ -18,6 +18,7 @@ public class Lightning : MonoBehaviour {
     public GameObject[] trees;
     public GameObject[] rocks;
     public GameObject[] lakes;
+    public GameObject PlayerSprite;
 
 	// Use this for initialization
 	void Start () {
@@ -72,6 +73,8 @@ public class Lightning : MonoBehaviour {
             rocks[i].gameObject.GetComponent<SpriteRenderer>().enabled = true;
         for (int i = 0; i < trees.Length; i++)
             trees[i].gameObject.GetComponent<SpriteRenderer>().enabled = true;
+
+        PlayerSprite.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         
         if (!ass.isPlaying)
         {
@@ -86,7 +89,9 @@ public class Lightning : MonoBehaviour {
             rocks[i].gameObject.GetComponent<SpriteRenderer>().enabled = false;
         for (int i = 0; i < trees.Length; i++)
             trees[i].gameObject.GetComponent<SpriteRenderer>().enabled = false;
-      
+
+
+        PlayerSprite.gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
         light.enabled = false;
         
