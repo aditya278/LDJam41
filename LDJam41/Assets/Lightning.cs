@@ -43,15 +43,10 @@ public class Lightning : MonoBehaviour {
 		if ((Time.time - lasttime) > minTime) {
 
 			if (Random.value > threshold) {
-				if (!ass.isPlaying) {
 				
-					//ass.clip = ac [Random.Range (0, 1)];
-					ass.PlayOneShot (ac[Random.Range(0,ac.Length)], 1f);
-					light.enabled = true;
-				}
-					
+                light.enabled = true;
 
-			} else {
+            } else {
 
 				light.enabled = false;
 				lasttime = Time.time;
@@ -64,7 +59,11 @@ public class Lightning : MonoBehaviour {
     {
 
         light.enabled = true;
-
+        if (!ass.isPlaying)
+        {
+            
+            ass.PlayOneShot(ac[Random.Range(0, ac.Length)], 1f);
+        }
         yield return new WaitForSeconds(time);
 
         light.enabled = false;
