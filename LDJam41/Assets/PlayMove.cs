@@ -9,6 +9,7 @@ public class PlayMove : MonoBehaviour {
 	public footTrail ft;
 	 public PlayerMovement pm;
 
+    
 	float l,p;
 	// Use this for initialization
 	void Start () {
@@ -34,12 +35,11 @@ public class PlayMove : MonoBehaviour {
 
 	}
 
-	public void clicked()
+	public void click_num_two()
 	{
 		dumdum = true;
 		gob1.SetActive (false);
 		gob2.SetActive (false);
 		gob3.SetActive (false);
-
 	}
 }
