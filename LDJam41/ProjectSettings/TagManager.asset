@@ -9,6 +9,8 @@ TagManager:
   - Rock
   - Border
   - Meme
+  - GameManager
+  - Target
   layers:
   - Default
   - TransparentFX

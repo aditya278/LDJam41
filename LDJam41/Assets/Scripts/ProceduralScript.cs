@@ -24,24 +24,14 @@ public class ProceduralScript : MonoBehaviour {
     int randNumber;
     public GameObject mainAudioSource;
 
+
+    public PlayMove pmm;
+    public bool makeMemes = false;
+
     // Use this for initialization
     void Start()
     {
-        randNumber = Random.Range(0, spawnPoints.Length);
-        Instantiate(mainAudioSource, spawnPoints[randNumber].transform.position, Quaternion.identity);
-
-        for (int i=0; i < memes.Length; i++)
-        {
-            int rand = Random.Range(1, 2);
-            randNumber += rand;
-            if (randNumber > spawnPoints.Length-1)
-            {
-                randNumber -= spawnPoints.Length;
-            }
-            Instantiate(memes[i],spawnPoints[randNumber].transform.position, Quaternion.identity);
-            
-        }
-
+      
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         mapWidth = 30;
         mapHeight = 30;
@@ -92,6 +82,24 @@ public class ProceduralScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
+        if(pmm.dumdum && !makeMemes)
+        {
+            makeMemes = true;
+            randNumber = Random.Range(0, spawnPoints.Length);
+            mainAudioSource.transform.position = spawnPoints[randNumber].transform.position;
+
+            for (int i = 0; i < memes.Length; i++)
+            {
+                int rand = Random.Range(1, 2);
+                randNumber += rand;
+                if (randNumber > spawnPoints.Length - 1)
+                {
+                    randNumber -= spawnPoints.Length;
+                }
+                Instantiate(memes[i], spawnPoints[randNumber].transform.position, Quaternion.identity);
+
+            }
+        }
 
     }
 }

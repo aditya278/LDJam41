@@ -6,7 +6,7 @@ public class MakePlayerFollow : MonoBehaviour {
 
     public Transform playerTransform;
     public float maxDistance = 50f;
-    public float timeDiff = 60f;
+    public float timeDiff = 120f;
 	// Use this for initialization
 	void Start () {
 
@@ -22,8 +22,14 @@ public class MakePlayerFollow : MonoBehaviour {
         {
             if (Vector3.Distance(transform.position, playerTransform.position) < maxDistance)
             {
-                Vector3 direction = (playerTransform.position - transform.position).normalized;
-                transform.position -= direction;
+                if (transform.position.x > 22f && transform.position.x < 278f)
+                {
+                    if (transform.position.y > 22f && transform.position.y < 278f)
+                    {
+                        Vector3 direction = (playerTransform.position - transform.position).normalized;
+                        transform.position -= direction;
+                    }
+                }
             }
         }
 

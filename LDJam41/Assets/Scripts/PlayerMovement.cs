@@ -10,10 +10,14 @@ public class PlayerMovement : MonoBehaviour {
 	public float angle;
 	public footTrail ft;
     public PlayMove pmm;
-    public AudioClip scream;
-    public AudioSource asource;
+
+    public GameManager gameManager;
+
 	// Use this for initialization
 	void Start () {
+
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
 		direction = Vector3.zero;
 	}
 
@@ -23,10 +27,15 @@ public class PlayerMovement : MonoBehaviour {
 
 		ft.toPlay = ft.dirt;
 
-        if(col.gameObject.CompareTag("Meme"))
+        if (pmm.dumdum)
         {
-            Debug.Log("Game Over!!");
-            asource.PlayOneShot(scream);
+            if (col.gameObject.CompareTag("Meme"))
+            {
+                AudioSource audioSource = col.gameObject.GetComponent<AudioSource>();
+                audioSource.Stop();
+                Debug.Log("Game Over!!");
+                gameManager.GameOver();
+            }
         }
 
 	}
