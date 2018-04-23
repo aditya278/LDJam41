@@ -7,6 +7,8 @@ TagManager:
   - Tree
   - Lake
   - Rock
+  - Border
+  - Meme
   layers:
   - Default
   - TransparentFX

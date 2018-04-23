@@ -9,7 +9,9 @@ public class PlayerMovement : MonoBehaviour {
 	public float v;
 	public float angle;
 	public footTrail ft;
-	public PlayMove pm;
+    public PlayMove pmm;
+    public AudioClip scream;
+    public AudioSource asource;
 	// Use this for initialization
 	void Start () {
 		direction = Vector3.zero;
@@ -20,6 +22,13 @@ public class PlayerMovement : MonoBehaviour {
 	{
 
 		ft.toPlay = ft.dirt;
+
+        if(col.gameObject.CompareTag("Meme"))
+        {
+            Debug.Log("Game Over!!");
+            asource.PlayOneShot(scream);
+        }
+
 	}
 
 	void OnTriggerExit2D(Collider2D col)
@@ -30,18 +39,31 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if (pm.dumdum) {
-			h = Input.GetAxis ("Horizontal");
-			v = Input.GetAxis ("Vertical");
-		}
+        if (pmm.dumdum)
+        {
+            h = Input.GetAxis("Horizontal");
+            v = Input.GetAxis("Vertical");
+
+        }
 
 
-		direction = new Vector3 (h, v);
+
+        direction = new Vector3 (h, v);
 
 		gameObject.transform.position += direction * 0.05f;
 
+        if(gameObject.transform.position.x <= 20f || gameObject.transform.position.x >= 280f)
+        {
+            gameObject.transform.position = new Vector3(300f - gameObject.transform.position.x, gameObject.transform.position.y);
+        }
 
-		angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        if (gameObject.transform.position.y <= 20f || gameObject.transform.position.y >= 280f)
+        {
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, 300f - gameObject.transform.position.y);
+        }
+
+
+        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 	}
 }

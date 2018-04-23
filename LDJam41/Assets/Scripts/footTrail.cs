@@ -10,11 +10,13 @@ public class footTrail : MonoBehaviour {
 	public float hrz;
 	public GameObject Player;
 	// Use this for initialization
-	public float h,v,l,p;
+	public float h,v;
 	PlayerMovement pm;
 	public AudioSource ass;
 	public AudioClip normal,dirt,toPlay;
-	public PlayMove pmm;
+    public PlayMove pmm;
+
+    public float l, p;
 	void Start () {
 
 		toPlay = normal;
@@ -27,13 +29,13 @@ public class footTrail : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if (pmm.dumdum) {
-			l = Input.GetAxis ("Horizontal");
-			p = Input.GetAxis ("Vertical");
-
-		}
-
-		if (l == 0 && p == 0) {
+        if (pmm.dumdum)
+        {
+            l = Input.GetAxis("Horizontal");
+            p = Input.GetAxis("Vertical");
+        }
+       
+        if ( l== 0 &&  p== 0) {
 		
 
 

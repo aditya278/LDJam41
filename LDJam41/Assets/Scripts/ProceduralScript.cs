@@ -18,10 +18,29 @@ public class ProceduralScript : MonoBehaviour {
     public Sprite[] rockSprites;
     public Sprite[] treeSprites;
 
+    public Transform[] spawnPoints;
+    public GameObject[] memes;
+
+    int randNumber;
+    public GameObject mainAudioSource;
 
     // Use this for initialization
     void Start()
     {
+        randNumber = Random.Range(0, spawnPoints.Length);
+        Instantiate(mainAudioSource, spawnPoints[randNumber].transform.position, Quaternion.identity);
+
+        for (int i=0; i < memes.Length; i++)
+        {
+            int rand = Random.Range(1, 2);
+            randNumber += rand;
+            if (randNumber > spawnPoints.Length-1)
+            {
+                randNumber -= spawnPoints.Length;
+            }
+            Instantiate(memes[i],spawnPoints[randNumber].transform.position, Quaternion.identity);
+            
+        }
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         mapWidth = 30;
@@ -72,10 +91,6 @@ public class ProceduralScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        //int w = Random.Range((int)(playerTransform.transform.position.x - 5f), (int)(playerTransform.transform.position.x + 5f));
-       // int h = Random.Range((int)(playerTransform.transform.position.y - 5f), (int)(playerTransform.transform.position.y + 5f));
-
         
 
     }

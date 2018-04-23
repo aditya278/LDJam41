@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4572038016577670}
   - component: {fileID: 114948285690660510}
+  - component: {fileID: 82883841277423124}
   m_Layer: 0
   m_Name: CharanSparsh
   m_TagString: Untagged
@@ -50,12 +51,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4083529988203280}
-  - component: {fileID: 114370239065520056}
   - component: {fileID: 212237096325889072}
   - component: {fileID: 50560050976789872}
+  - component: {fileID: 61576212534500842}
+  - component: {fileID: 114298186810056748}
   m_Layer: 0
   m_Name: FollowIt
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533030635232314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6637185, y: -1.2129438, z: -0.5}
+  m_LocalPosition: {x: 50, y: 50, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4083529988203280}
@@ -121,7 +123,112 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &114370239065520056
+--- !u!61 &61576212534500842
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646533500451698}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.023651078, y: -0.063072816}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.22736284, y: 0.21159363}
+  m_EdgeRadius: 0
+--- !u!82 &82883841277423124
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1086804970678820}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &114298186810056748
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -136,6 +243,7 @@ MonoBehaviour:
   h: 0
   v: 0
   angle: 0
+  ft: {fileID: 114948285690660510}
 --- !u!114 &114948285690660510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,6 +263,10 @@ MonoBehaviour:
   Player: {fileID: 1646533500451698}
   h: 0
   v: 0
+  ass: {fileID: 82883841277423124}
+  normal: {fileID: 8300000, guid: e5c39fbd261277d40a9b0abc68fd5f60, type: 3}
+  dirt: {fileID: 8300000, guid: 6bb8a3fbc718c0142919e81db466cfcb, type: 3}
+  toPlay: {fileID: 0}
 --- !u!212 &212237096325889072
 SpriteRenderer:
   m_ObjectHideFlags: 1

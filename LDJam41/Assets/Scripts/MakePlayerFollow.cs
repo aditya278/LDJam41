@@ -9,8 +9,8 @@ public class MakePlayerFollow : MonoBehaviour {
     public float timeDiff = 60f;
 	// Use this for initialization
 	void Start () {
-		
 
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
 	}
 	
