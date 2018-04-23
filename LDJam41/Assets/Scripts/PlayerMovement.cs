@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour {
 
 	public Vector3 direction;
@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour {
 
     public GameManager gameManager;
 
+	public Sprite[] sprite; 
+
+	public Image image;
 	// Use this for initialization
 	void Start () {
 
@@ -42,6 +45,29 @@ public class PlayerMovement : MonoBehaviour {
                 {
                     sources[index].mute = true;
                 }
+
+
+
+				if (col.name.Contains ("Catch me outside")){
+					//Debug.Log ("0 encountered");
+					image.sprite = sprite [0];
+				} else if (col.name.Contains ("Just Do it")) {
+					//Debug.Log ("1 encountered");
+					image.sprite = sprite [1];
+				} else if (col.name.Contains ("Why are you running")) {
+					//Debug.Log ("2 encountered");
+					image.sprite = sprite [2];
+				} else if (col.name.Contains ("Spaghetti")) {
+					//Debug.Log ("3 encountered");
+					image.sprite = sprite [3];
+				} else if (col.name.Contains ("Yodeling kid")) {
+					//Debug.Log ("4 encountered");
+					image.sprite = sprite [4];
+				} else if (col.name.Contains ("DO you know the")) {
+					image.sprite = sprite [5];
+					//Debug.Log ("5 encountered");
+				}
+				image.gameObject.SetActive (true);
 
 
                 Debug.Log("Game Over!!");

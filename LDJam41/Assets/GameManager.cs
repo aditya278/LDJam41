@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
 
     public bool gameover;
 
+	public GameObject player;
 	// Use this for initialization
 	void Start () {
 
@@ -51,11 +52,13 @@ public class GameManager : MonoBehaviour {
             asource.PlayOneShot(scream);
         else
             asource.PlayOneShot(evilMorty);
-        Time.timeScale = 0;
+        
+		player.SetActive (false);
+		//Time.timeScale = 0;
 
         yield return new WaitForSecondsRealtime(t);
 
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         SceneManager.LoadScene(0);
 
     }
