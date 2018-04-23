@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float v;
 	public float angle;
 	public footTrail ft;
+	public PlayMove pm;
 	// Use this for initialization
 	void Start () {
 		direction = Vector3.zero;
@@ -29,8 +30,11 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		h = Input.GetAxis ("Horizontal");
-		v = Input.GetAxis ("Vertical");
+		if (pm.dumdum) {
+			h = Input.GetAxis ("Horizontal");
+			v = Input.GetAxis ("Vertical");
+		}
+
 
 		direction = new Vector3 (h, v);
 
