@@ -61,14 +61,14 @@ public class PlayerMovement : MonoBehaviour {
 
 		gameObject.transform.position += direction * 0.05f;
 
-        if(gameObject.transform.position.x <= 20f || gameObject.transform.position.x >= 280f)
+        if(gameObject.transform.position.x <= 8f || gameObject.transform.position.x >= 260f)
         {
-            gameObject.transform.position = new Vector3(300f - gameObject.transform.position.x, gameObject.transform.position.y);
+            gameObject.transform.position = new Vector3(268f - gameObject.transform.position.x, gameObject.transform.position.y);
         }
 
-        if (gameObject.transform.position.y <= 20f || gameObject.transform.position.y >= 280f)
+        if (gameObject.transform.position.y <= 8f || gameObject.transform.position.y >= 260f)
         {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, 300f - gameObject.transform.position.y);
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, 268f - gameObject.transform.position.y);
         }
 
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -23,8 +24,20 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver()
     {
+        
+       
+        StartCoroutine(Waiting(5f));
+    }
+
+    IEnumerator Waiting(float t)
+    {
         targetAudio.Stop();
         asource.PlayOneShot(scream);
         Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(t);
+
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
+
 }

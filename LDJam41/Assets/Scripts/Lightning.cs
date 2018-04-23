@@ -66,13 +66,13 @@ public class Lightning : MonoBehaviour {
     {
 
         light.enabled = true;
-        for (int i = 0; i < lakes.Length; i++)
+       /* for (int i = 0; i < lakes.Length; i++)
             lakes[i].gameObject.GetComponent<SpriteRenderer>().enabled = true;
         for (int i = 0; i < rocks.Length; i++)
             rocks[i].gameObject.GetComponent<SpriteRenderer>().enabled = true;
         for (int i = 0; i < trees.Length; i++)
             trees[i].gameObject.GetComponent<SpriteRenderer>().enabled = true;
-
+            */
 
         if (!ass.isPlaying)
         {
@@ -80,14 +80,14 @@ public class Lightning : MonoBehaviour {
             ass.PlayOneShot(ac[Random.Range(0, ac.Length)], 1f);
         }
         yield return new WaitForSeconds(time);
-
+        /*
         for (int i = 0; i < lakes.Length; i++)
             lakes[i].gameObject.GetComponent<SpriteRenderer>().enabled = false;
         for (int i = 0; i < rocks.Length; i++)
             rocks[i].gameObject.GetComponent<SpriteRenderer>().enabled = false;
         for (int i = 0; i < trees.Length; i++)
             trees[i].gameObject.GetComponent<SpriteRenderer>().enabled = false;
-
+            */
 
         light.enabled = false;
         

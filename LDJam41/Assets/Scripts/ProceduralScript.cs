@@ -33,20 +33,20 @@ public class ProceduralScript : MonoBehaviour {
     {
       
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        mapWidth = 30;
-        mapHeight = 30;
+        mapWidth = 22;
+        mapHeight = 22;
         mapgrid = new int[mapWidth, mapHeight];
 
         for (int w = 0; w < mapWidth; w++)
         {
             for (int h = 0; h < mapHeight; h++)
             {
-                float wCoord = (float)w / 10f;
-                float hCoord = (float)h / 10f;
+                float wCoord = (float)w / 8f;
+                float hCoord = (float)h / 8f;
                 mapgrid[w, h] = (int)(Mathf.PerlinNoise(wCoord, hCoord) * 5);
-                Debug.Log("\t" + mapgrid[w, h]);
+                //Debug.Log("\t" + mapgrid[w, h]);
             }
-            Debug.Log("\n");
+            //Debug.Log("\n");
         }
 
         for (int w = 0; w < mapWidth; w++)
