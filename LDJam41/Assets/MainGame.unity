@@ -212,7 +212,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4355186732320058, guid: 249ad782ecdcf8a4699cc9a47f38eea2, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212971062244053118, guid: 249ad782ecdcf8a4699cc9a47f38eea2,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.27450982
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 249ad782ecdcf8a4699cc9a47f38eea2, type: 2}
@@ -320,7 +325,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4160152018653360, guid: 418771561e1b82043a68e2ededefbdd6, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 418771561e1b82043a68e2ededefbdd6, type: 2}
@@ -405,9 +410,9 @@ Transform:
   m_LocalPosition: {x: -6.04, y: 5.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 191002077}
   - {fileID: 316208324}
   - {fileID: 868821322}
+  - {fileID: 191002077}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -553,6 +558,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   waitForSec: 0.5
+  trees: []
+  rocks: []
+  lakes: []
 --- !u!1001 &1296427763
 Prefab:
   m_ObjectHideFlags: 0
@@ -590,7 +598,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4333259723158804, guid: 8ef72e34559f49348b47374cdfd1ebfb, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ef72e34559f49348b47374cdfd1ebfb, type: 2}
@@ -688,6 +696,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 52f02e0acf7a48846b3a362a5f5061a2, type: 3}
   - {fileID: 8300000, guid: f959fbfe645c95d4ab66be0cc4face64, type: 3}
   waitForSec: 0.5
+  trees: []
+  rocks: []
+  lakes: []
 --- !u!82 &1365745919
 AudioSource:
   m_ObjectHideFlags: 0
