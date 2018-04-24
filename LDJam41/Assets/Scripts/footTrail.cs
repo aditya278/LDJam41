@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class footTrail : MonoBehaviour {
 
@@ -31,8 +32,8 @@ public class footTrail : MonoBehaviour {
 
         if (pmm.dumdum)
         {
-            l = Input.GetAxis("Horizontal");
-            p = Input.GetAxis("Vertical");
+            l = CrossPlatformInputManager.GetAxis("Horizontal");
+            p = CrossPlatformInputManager.GetAxis("Vertical");
         }
        
         if ( l== 0 &&  p== 0) {

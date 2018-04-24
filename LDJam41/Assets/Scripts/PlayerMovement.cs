@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
+
 public class PlayerMovement : MonoBehaviour {
 
 	public Vector3 direction;
@@ -107,8 +109,8 @@ public class PlayerMovement : MonoBehaviour {
 
         if (pmm.dumdum)
         {
-            h = Input.GetAxis("Horizontal");
-            v = Input.GetAxis("Vertical");
+            h = CrossPlatformInputManager.GetAxis("Horizontal");
+            v = CrossPlatformInputManager.GetAxis("Vertical");
 
         }
 

@@ -9,8 +9,9 @@ public class PlayMove : MonoBehaviour {
 	public footTrail ft;
 	 public PlayerMovement pm;
 
-    
-	float l,p;
+    public GameObject JoyStickCanvas;
+
+    float l,p;
 	// Use this for initialization
 	void Start () {
 
@@ -41,5 +42,6 @@ public class PlayMove : MonoBehaviour {
 		gob1.SetActive (false);
 		gob2.SetActive (false);
 		gob3.SetActive (false);
+        JoyStickCanvas.SetActive(true);
 	}
 }

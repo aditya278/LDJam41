@@ -9,9 +9,13 @@ public class TypeWriterEffect : MonoBehaviour {
 	private string currentText = "";
     public GameObject mainMenuCanvas;
     public GameObject button2;
+
+    public GameObject JoyStickCanvas;
+
 	// Use this for initialization
 	void Start () {
 
+        JoyStickCanvas.SetActive(false);
         mainMenuCanvas.SetActive(false);
         StartCoroutine(ShowText());
     }

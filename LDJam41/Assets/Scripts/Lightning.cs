@@ -78,7 +78,6 @@ public class Lightning : MonoBehaviour {
         
         if (!ass.isPlaying)
         {
-            
             ass.PlayOneShot(ac[Random.Range(0, ac.Length)], 1f);
         }
         yield return new WaitForSeconds(time);

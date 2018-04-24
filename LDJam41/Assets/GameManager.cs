@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject player;
 
     public GameObject finalCanvas;
+    public GameObject JoyStickCanvas;
 
     public TypeWriterEffect typeWriterEffect;
 
@@ -31,10 +32,15 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 	}
 
     public void GameOver()
     {
+        JoyStickCanvas.SetActive(false);
         gameover = true;
         StartCoroutine(Waiting(5f));
 
@@ -45,6 +51,7 @@ public class GameManager : MonoBehaviour {
         gameover = false;
 
         finalCanvas.SetActive(true);
+        JoyStickCanvas.SetActive(false);
         typeWriterEffect.StartShowingText();
         asource.mute = false;
         asource.PlayOneShot(evilMorty);
