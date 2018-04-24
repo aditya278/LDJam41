@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         gameObject.transform.position = spawnPoint.transform.position;
 		direction = Vector3.zero;
@@ -112,6 +112,14 @@ public class PlayerMovement : MonoBehaviour {
             h = CrossPlatformInputManager.GetAxis("Horizontal");
             v = CrossPlatformInputManager.GetAxis("Vertical");
 
+            if(h >= 0) {
+
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else {
+
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
 
 
