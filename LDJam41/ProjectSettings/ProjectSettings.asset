@@ -160,7 +160,11 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+<<<<<<< Updated upstream
     Android: com.AdityaChetan.LDjam41
+=======
+    Standalone: com.AdityaChetan.LDJam41
+>>>>>>> Stashed changes
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 19
